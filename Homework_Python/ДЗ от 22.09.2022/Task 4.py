@@ -41,9 +41,11 @@ try:
             print(f'{x % y}')
         elif z == 'div':
             print(f'{x // y}')
-        else:
-            z == 'pow'
+        elif z == 'pow':
             print(f'{x ** y}')
+        else:
+            print("Enter the operation sign and don't show off")
+
     else:
         print("Division by 0!")
 
