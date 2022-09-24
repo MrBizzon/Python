@@ -10,10 +10,10 @@
 
 from random import randint
 n, m = int(input("Enter the number of rows: ")), int(input("Enter the number of columns: "))
-a = [[randint(0, 100) for j in range(m)] for i in range(n)]
+my_random = [[randint(0, 100) for j in range(m)] for i in range(n)]
 
 array = []
-for i in a:
+for i in my_random:
     for i2 in i:
         array.append(i2)
 array2 = sorted(array)
