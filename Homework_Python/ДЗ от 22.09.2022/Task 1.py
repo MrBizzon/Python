@@ -11,7 +11,6 @@ def day_of_week(a):
         day = True
         return day
 
-
 try:
     number = int(input("Enter a number from 1 to 7: "))
     if number > 7 or number < 0:
@@ -19,7 +18,7 @@ try:
     else:
         if day_of_week(number):
             print("This day is a weekday")
-        else:
+        else:git 
             print("This day is a day off")
 except:
     print("Enter an integer")
