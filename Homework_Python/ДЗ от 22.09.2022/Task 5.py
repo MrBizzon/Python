@@ -17,8 +17,8 @@ for i in my_random:
     for i2 in i:
         array.append(i2)
 array2 = sorted(array)
-for j in range(0, len(array2), n):
+for j in range(0, len(array), n):
     number = array2[j: n + j]
     if len(number) < n:
-        number = number + [None for y in range(n - len(number))]
+        number = number + [None for m in range(n - len(number))]
     print(list(number))
