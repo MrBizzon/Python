@@ -18,7 +18,7 @@ try:
     else:
         if day_of_week(number):
             print("This day is a weekday")
-        else:git 
+        else:
             print("This day is a day off")
 except:
     print("Enter an integer")
