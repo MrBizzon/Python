@@ -11,6 +11,7 @@
 from random import randint
 n, m = int(input("Enter the number of rows: ")), int(input("Enter the number of columns: "))
 my_random = [[randint(0, 100) for j in range(m)] for i in range(n)]
+print(my_random)
 
 array = []
 for i in my_random:

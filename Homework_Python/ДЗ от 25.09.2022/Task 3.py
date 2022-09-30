@@ -19,6 +19,6 @@ for i in range(list_length):
 print(f'The second list: ', second_list)
 print()
 
-result = [elem for elem in first_list if elem in second_list]
+result = [num for num in first_list if num in second_list]
 print(f'Sorting and checking for matches: ', sorted(result))
 print()
