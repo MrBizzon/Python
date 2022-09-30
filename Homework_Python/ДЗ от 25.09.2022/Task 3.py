@@ -4,7 +4,7 @@
 import random
 first_list = []
 for num in range(10):
-    first_list.append(random.randrange(0, 30))
+    first_list.append(random.randrange(0, 100))
 print(f'The first list: ', list(first_list))
 print()
 
