@@ -5,7 +5,8 @@
 
 from random import randint
 import itertools as it
-
+import time
+start = time.time()
 
 def ratios_list(k):
     indicator = [randint(0, 10) for i in range(k + 1)]
@@ -32,3 +33,5 @@ print(sum_of_monomials)
 
 with open('Volgograd.txt', 'w') as data:
     data.write(sum_of_monomials)
+fin = time.time()
+print(fin - start)
