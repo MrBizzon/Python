@@ -6,6 +6,8 @@
 # a) Добавьте игру против бота
 # b) Подумайте как наделить бота ""интеллектом""
 
+# ИГРА ЧЕЛОВЕК ПРОТИВ ЧЕЛОВЕКА
+
 import random
 from random import randint
 from random import choice
@@ -22,7 +24,7 @@ def acquaintance():
 
 def quantity_and_random(players):
     global maximum_stroke, number_of_candies
-    number_of_candies = int(180)
+    number_of_candies = int(2021)
     maximum_stroke = int(28)
     the_first_move = randint(0, 2)
     if the_first_move != 1:

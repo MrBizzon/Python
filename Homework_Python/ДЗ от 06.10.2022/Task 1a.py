@@ -24,7 +24,7 @@ def acquaintance():
 
 def quantity_and_random(players):
     global maximum_stroke, number_of_candies
-    number_of_candies = int(221)
+    number_of_candies = int(2021)
     maximum_stroke = int(28)
     the_first_move = randint(0, 2)
     if the_first_move != 1:
