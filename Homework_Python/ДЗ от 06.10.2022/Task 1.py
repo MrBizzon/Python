@@ -64,26 +64,18 @@ def the_game_itself(candies, players, bot_responses):
                 print(f'[{player_one}]: Извините, забираю {motion} конфет')
 
         if motion > candies[0] or motion > candies[1]:
-            if candies[0] == 1 or candies[0] == 21:
-                print(
-                    f'[{player_three}]: Можно взять не более {candies[1]} конфет')
-            elif 2 <= candies[0] < 5:
-                print(
-                    f'[{player_three}]: Можно взять не более {candies[1]} конфет')
-            else:
-                print(
-                    f'[{player_three}]: Можно взять не более {candies[1]} конфет')
-            mistake = 2
-            while mistake >= 0:
-                if candies[0] >= motion <= candies[1]:
-                    break
-                print(
-                    f'[{player_three}]: Попытайтесь снова, у вас {mistake} попытки')
-                motion = int(input())
-                mistake -= 1
-            else:
-                return print(f'[{player_three}]: Вы исчерпали свои попытки! Конец игры!')
-            sum += motion
+                print(f'[{player_three}]: Можно взять не более {candies[1]} конфет')
+        mistake = 2
+        while mistake >= 0:
+            if candies[0] >= motion <= candies[1]:
+                break
+            print(
+                f'[{player_three}]: Попытайтесь снова, у вас {mistake} попытки')
+            motion = int(input())
+            mistake -= 1
+        else:
+            return print(f'[{player_three}]: Вы исчерпали свои попытки! Конец игры!')
+        sum += motion
         candies[0] -= motion
         if candies[0] > 0:
             print(f'[{player_three}]: На кону {candies[0]} конфет')
