@@ -63,15 +63,7 @@ def the_game_itself(candies, players, bot_responses):
             print(f'[{player_two}]: {players[0]}, {choice(bot_responses)}')
             motion = int(input())
             if motion > candies[1]:
-                if candies[0] == 1 or candies[0] == 21:
-                    print(
-                        f'[{player_three}]: Можно взять не более {candies[1]} конфет')
-                elif 2 <= candies[0] < 5:
-                    print(
-                        f'[{player_three}]: Можно взять не более {candies[1]} конфет')
-                else:
-                    print(
-                        f'[{player_three}]: Можно взять не более {candies[1]} конфет')
+                print(f'[{player_three}]: Можно взять не более {candies[1]} конфет')
                 mistake = 2
                 while mistake >= 0:
                     if candies[0] >= motion <= candies[1]:
