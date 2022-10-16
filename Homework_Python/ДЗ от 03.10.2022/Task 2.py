@@ -1,10 +1,9 @@
 # задача 2 . Задайте последовательность чисел. Напишите программу,
 # которая выведет список неповторяющихся элементов исходной последовательности.
 
-def ran():
-    from random import randint
-    num = [randint(0, 50) for i in range(20)]
-    return num
+
+from random import randint
+num = [randint(0, 50) for i in range(20)]
 
 
 def get_unique_numbers(num):

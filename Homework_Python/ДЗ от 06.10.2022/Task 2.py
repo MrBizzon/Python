@@ -12,7 +12,7 @@ def string_encoding(string):
             if output_string:
                 empty_string += str(cnt) + output_string
             cnt = 1
-            # output_string = char
+            output_string = char
         else:
             cnt += 1
     else:
