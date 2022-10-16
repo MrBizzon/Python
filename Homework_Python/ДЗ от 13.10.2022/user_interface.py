@@ -1,12 +1,12 @@
 def ent_type(mark):
     global type_selection
-    chck = True
-    while (chck):
-        chck = True
+    choice = True
+    while choice:
+        choice = True
         type_selection = input(
             'Какое число будете вводить? Нажмите в, если вещественное, и к - если комплексное: ').lower()
         if type_selection in ('в', 'к'):
-            chck = False
+            choice = False
         elif mark == 1:
             type_selection = 'в'
         elif mark == 2:
