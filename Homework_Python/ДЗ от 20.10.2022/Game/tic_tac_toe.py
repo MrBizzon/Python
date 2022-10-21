@@ -1,10 +1,8 @@
 import telebot
 import random
-
 from telebot import types
 
-API_TOKEN = '5691310246:AAEqL7CJAZwREazpL5LEsd3P9rQ5VAbV2P4'
-BOT_NAME = ''  # Имя для бота. Нужно в том случае, если вы хотите обращаться к боту по имени
+API_TOKEN = 'ВАШ_ТОКЕН'
 bot = telebot.TeleBot(API_TOKEN)
 part = {}
 
@@ -13,15 +11,12 @@ game_start = False
 
 
 matrix = [" ", " ", " ",
-              " ", " ", " ",
-              " ", " ", " "]
+          " ", " ", " ",
+          " ", " ", " "]
 
 
 player = "0"
 iscin = "X"
-
-print("Начинаем!")
-
 
 correct_symbol = False
 incorrect_character = False
@@ -30,24 +25,25 @@ incorrect_character = False
 def new_matrix():
     global matrix
     matrix = [" ", " ", " ",
-                  " ", " ", " ",
-                  " ", " ", " "]
+              " ", " ", " ",
+              " ", " ", " "]
 
 
-def first_def(cell_1, cell_2, cell_3):
-    if cell_1 == player and cell_2 == player and cell_3 == player:
+def first_def(first_cell, second_cell, third_cell):
+    if first_cell == player and second_cell == player and third_cell == player:
         global correct_symbol
         correct_symbol = True
 
 
-def second_def(cell_1, cell_2, cell_3):
-    if cell_1 == iscin and cell_2 == iscin and cell_3 == iscin:
+def second_def(first_cell, second_cell, third_cell):
+    if first_cell == iscin and second_cell == iscin and third_cell == iscin:
         global incorrect_character
         incorrect_character = True
 
 
-def third_def(cell_1, cell_2, posDef):
-    if cell_1 == player and cell_2 == player:
+def third_def(first_cell, second_cell):
+    if first_cell == player and second_cell == player:
+        global posDef
         posDef = iscin
 
 
@@ -72,7 +68,6 @@ def mess(message):
             game_start = True
         else:
             bot.send_message(message.chat.id, "Кажется, возникла ошибка!")
-    # game
 
     if game_start == True:
 
@@ -97,25 +92,19 @@ def mess(message):
 def callbackInline(call):
     if (call.message):
 
-    # bot manager
         random_select = random.randint(0, 8)
         if matrix[random_select] == player:
             random_select = random.randint(0, 8)
         elif matrix[random_select] == iscin:
             random_select = random.randint(0, 8)
-        elif matrix[random_select] == " ":
+        if matrix[random_select] == " ":
             matrix[random_select] = iscin
 
-    # player manager
     for i in range(9):
         if call.data == str(i):
             if (matrix[i] == " "):
                 matrix[i] = player
 
-
-
-
-        # lose or win
         first_def(matrix[0], matrix[1], matrix[2])
         first_def(matrix[3], matrix[4], matrix[5])
         first_def(matrix[6], matrix[7], matrix[8])
@@ -138,7 +127,6 @@ def callbackInline(call):
 
     bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text="Готов",
                           reply_markup=None)
-    # update cells
     global layout
     layout.row(part[0], part[1], part[2])
     layout.row(part[3], part[4], part[5])
@@ -152,14 +140,15 @@ def callbackInline(call):
         new_matrix()
 
         correct_symbol = False
-        gameIsStart = False
+        game_start = False
+
     global incorrect_character
     if incorrect_character:
         bot.send_message(call.message.chat.id, "Я выиграл!")
         new_matrix()
 
         incorrect_character = False
-        gameIsStart = False
+        game_start = False
 
 
 bot.polling()
