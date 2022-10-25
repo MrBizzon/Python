@@ -4,15 +4,15 @@
 
 Начало работы телеграмм-бота:
 
-<img src="calc1.jpg" width="400" alt="Начало работы бота">
+<img src="Screens/calc1.jpg" width="400" alt="Начало работы бота">
 
 Ввод математического действия:
 
-<img src="calc2.jpg" width="400" alt="Начало работы бота">
+<img src="Screens/calc2.jpg" width="400" alt="Ввод математического действия">
 
 Получение результата:
 
-<img src="calc3.jpg" width="400" alt="Начало работы бота">
+<img src="Screens/calc3.jpg" width="400" alt="Получение результата">
 
 
 ## Принцип работы
