@@ -5,7 +5,7 @@ import sqlite3
 from datetime import datetime as dt
 
 API_TOKEN = 'ВАШ ТОКЕН'
-bot = telebot.TeleBot('ВАШ ТОКЕН')
+bot = telebot.TeleBot('5574497955:AAFYPJbRqT8RKEzM0MfdXJyuruDv2TrvEoA')
 
 value = ''
 oldvalue = ''
